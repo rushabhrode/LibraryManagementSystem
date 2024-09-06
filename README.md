@@ -34,7 +34,7 @@ CLIENT can do -
 
 [Showcase Demo Coming Soon!](https://www.github.com/MrAalu)
 
-![](https://s11.gifyu.com/images/SQEuf.gif)
+![]([https://s11.gifyu.com/images/SQEuf.gif](https://mraalu.pythonanywhere.com/media/project/LMS.gif))
 
 ## Documentation
 
