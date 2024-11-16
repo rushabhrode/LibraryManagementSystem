@@ -36,7 +36,8 @@ CLIENT can do -
 
 ## Documentation
 
-[Documentation Coming Soon!](https://www.github.com/MrAalu)
+You can find the Documentation inside /docs/ folder
+![](./docs/LMS.pdf)
 
 ## How to run Project locally :
 
@@ -84,13 +85,15 @@ docker-compose up
 
 ## Login Credentials
 
-Starter Login Credentials :
+Starter Login Credentials : (Make sure to import database collections i.e. userdetails json file into the collections)
 
-ADMIN :
+1. ADMIN (user_type = "admin_user" ):
 
 ```
  Email : admin@gmail.com , Password : admin
 ```
+
+2. Normal User Can be created by SignUp Page (user_type = "normal_user" ):
 
 ## Lessons Learned
 

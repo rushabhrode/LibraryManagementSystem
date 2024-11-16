@@ -81,7 +81,8 @@ const postUserSignup = async (req, res) => {
   const hashedPassword = await bcrypt.hash(password, 10)
 
   const otp_Code = Math.floor(Math.random() * 9000 + 1000)
-
+  console.log("n\n OTP CODE : ",otp_Code);
+  
   const hashed_otpCode = await generateOtp(otp_Code)
 
   // Check if user already registered
