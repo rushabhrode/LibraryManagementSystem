@@ -120,7 +120,7 @@ app.use(CustomError);
 app.use(PageNotFound);
 
 // Server
-const port = process.env.CONNECTION_PORT || 3000;
+const port = process.env.CONNECTION_PORT || 5000;
 const InitiateServer = async () => {
   try {
     await ConnectDatabase(process.env.CONNECTION_URL);
