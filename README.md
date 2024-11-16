@@ -69,6 +69,9 @@ You can find the Documentation inside /docs/ folder
 ```
 
 5. Once you Run Backend(Server), database will be created automatically on Mongodb & You just have to Import the TABLE Data which is Stored in folder 'mongoDatabase'
+**For Backend :**
+1. make sure your MondoDB server is running (you can check this via windows Services)
+2. open the mongoDB Compass (GUI for mongodb,download if u dont have) and from there you can import the data into respective collections** 
 
 ```bash
 Import respective .JSON file into database Collection
