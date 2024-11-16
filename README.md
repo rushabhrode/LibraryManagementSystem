@@ -63,6 +63,7 @@ You can find the Documentation inside /docs/ folder
 
 4. Start the Frontend and Backend
 
+**NOTE : If you have any issues or queries about Backend, refer to /backend/BackendInfo/ folder for details**
 ```bash
   npm run dev
 ```
