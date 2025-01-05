@@ -107,11 +107,6 @@ Starter Login Credentials : (Make sure to import database collections i.e. userd
 1. Code Comments are Loveletter's you leave behind for your future self.
 2. If you cant Solve it, address it for your Future Self. He sure can!
 
-## Feedback && Queries
-
-If you have any feedback, feel free to reach out :)  
-Email : amit.kc240@gmail.com
-
 ## Tech Stack
 
 **Frontend :** React, Bootstrap
