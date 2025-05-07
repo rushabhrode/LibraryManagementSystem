@@ -4,8 +4,12 @@ import BookList from './BookList'
 import { Row } from 'react-bootstrap'
 import axios from 'axios'
 import { backend_server } from '../../main'
+import { useTranslation } from 'react-i18next'
+
 
 const FeaturedBooks = () => {
+  const { t } = useTranslation()
+
   const featuredBooks_API_URL = `${backend_server}/api/v1/featuredBooks`
 
   // All Featured books
@@ -58,7 +62,7 @@ const FeaturedBooks = () => {
 
   return (
     <div className='container'>
-      <h1 className='h1 text-center'>Featured Books</h1>
+      <h1 className='h1 text-center'>{t('featuredBooks.title')}</h1>
 
       {allFeaturedBooks.length > 0 ? (
         <div>
@@ -73,7 +77,7 @@ const FeaturedBooks = () => {
           </Row>{' '}
         </div>
       ) : (
-        <p className='p text-center'>Loading ...</p>
+        <p className='p text-center'>{t('featuredBooks.loading')}</p>
       )}
     </div>
   )

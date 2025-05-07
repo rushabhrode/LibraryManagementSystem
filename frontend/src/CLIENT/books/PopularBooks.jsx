@@ -4,8 +4,10 @@ import './card.css'
 import RequestBook from '../requestBooks/RequestBook'
 import { backend_server } from '../../main'
 import axios from 'axios'
+import { useTranslation } from 'react-i18next'
 
 const PopularBooks = () => {
+  const { t } = useTranslation()
   const PopularBooks_API_URL = `${backend_server}/api/v1/popularBooks`
   // const { request_Book } = RequestBook()
 
@@ -58,7 +60,7 @@ const PopularBooks = () => {
                         className='btn btn-primary me-2'
                         onClick={() => request_Book(_id)}
                       >
-                        Request
+                        {t('books.request')}
                       </button>
                     ) : (
                       <button
@@ -66,13 +68,13 @@ const PopularBooks = () => {
                         className='btn btn-primary me-2'
                         disabled
                       >
-                        Out of Stock
+                        {t('books.out_of_stock')}
                       </button>
                     )}
 
                     <Link to={`/books/${_id}`}>
                       <button type='button' className='btn btn-secondary me-2'>
-                        View
+                      {t('books.view')}
                       </button>
                     </Link>
                   </div>

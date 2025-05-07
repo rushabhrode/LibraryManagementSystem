@@ -4,8 +4,11 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import RequestBook from '../requestBooks/RequestBook'
 import { Toaster } from 'react-hot-toast'
+import { useTranslation } from 'react-i18next'
+
 
 const RecentlyAddedBooks = () => {
+  const { t } = useTranslation()
   const recentBooks_Api_URL = `${backend_server}/api/v1/recentBooks`
 
   const [latestBooks, setLatestBooks] = useState([])
@@ -31,7 +34,7 @@ const RecentlyAddedBooks = () => {
   return (
     <div className='row'>
       <h1 className='h1 mt-3' style={{ textAlign: 'center' }}>
-        Latest Books
+        {t('recent.title')}
       </h1>
 
       {/* Recently added Books */}
@@ -70,7 +73,7 @@ const RecentlyAddedBooks = () => {
                           className='btn btn-primary me-2'
                           onClick={() => request_Book(_id)}
                         >
-                          Request
+                          {t('recent.request')}
                         </button>
                       ) : (
                         <button
@@ -78,7 +81,7 @@ const RecentlyAddedBooks = () => {
                           className='btn btn-primary me-2'
                           disabled
                         >
-                          Out of Stock
+                          {t('recent.out_of_stock')}
                         </button>
                       )}
 
@@ -88,7 +91,7 @@ const RecentlyAddedBooks = () => {
                           type='button'
                           className='btn btn-secondary me-2'
                         >
-                          View
+                          {t('recent.view')}
                         </button>
                       </Link>
                     </div>
@@ -98,7 +101,7 @@ const RecentlyAddedBooks = () => {
             )
           })
         ) : (
-          <p className='p text-center'>Loading ...</p>
+          <p className='p text-center'>{t('recent.loading')}</p>
         )}
       </div>
     </div>

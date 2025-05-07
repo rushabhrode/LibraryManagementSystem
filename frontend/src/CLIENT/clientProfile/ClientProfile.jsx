@@ -7,8 +7,12 @@ import ClientDashboard from './ClientDashboard'
 import ClientDetails from './ClientDetails'
 import ClientLogout from '../clientLogout/ClientLogout'
 import './clientprofile.css'
+import { useTranslation } from 'react-i18next'
+
 
 const ClientProfile = () => {
+  const { t } = useTranslation()
+
   const userLoginState = useLoginState()
 
   const getSingleUser_API_URL = `${backend_server}/api/v1/users/`
@@ -76,7 +80,7 @@ const ClientProfile = () => {
             className='btn btn-primary my-1 mx-1'
             style={{ width: '100%' }}
           >
-            Dashboard
+            {t('client.dashboard')}
           </button>
 
           <button
@@ -84,7 +88,7 @@ const ClientProfile = () => {
             className='btn btn-primary my-1 mx-1'
             style={{ width: '100%' }}
           >
-            My Details
+            {t('client.details')}
           </button>
 
           <button
@@ -92,7 +96,7 @@ const ClientProfile = () => {
             onClick={handleOnclickLogout}
             style={{ width: '100%' }}
           >
-            Logout
+            {t('client.logout')}
           </button>
         </Col>
 

@@ -1,0 +1,97 @@
+{
+  "navbar": {
+    "title": "Library Management System",
+    "links": {
+      "home": "Home",
+      "books": "Books",
+      "about": "About",
+      "contact": "Contact",
+      "login": "Login",
+      "signup": "Sign Up",
+      "logout": "Logout",
+      "profile": "Profile"
+    }
+  },
+  "banner": {
+    "banner1": {
+      "heading": "Discover new worlds",
+      "paragraph": "Dive into captivating stories. Immerse yourself in a world of imagination and wonders."
+    },
+    "banner2": {
+      "heading": "Escape through pages",
+      "paragraph": "Explore the vast realms of human wisdom and understanding through the pages of books."
+    }
+  },
+  "books": {
+    "request": "Request",
+    "out_of_stock": "Out of Stock",
+    "view": "View",
+    "loading": "Loading ..."
+  },
+  "filter": {
+    "search_by_title": "Search by title . . .",
+    "category": "Category",
+    "author": "Author",
+    "language": "Language",
+    "search": "Search",
+    "clear": "Clear Filter"
+  },
+  "browse": {
+    "request": "Request",
+    "out_of_stock": "Out of Stock",
+    "view": "View",
+    "loading": "Loading...",
+    "no_results": "0 Results"
+  },
+  "recent": {
+    "title": "Latest Books",
+    "request": "Request",
+    "out_of_stock": "Out of Stock",
+    "view": "View",
+    "loading": "Loading..."
+  },
+  "view": {
+    "details": "Book Details",
+    "by": "by",
+    "category": "Category",
+    "language": "Language",
+    "available": "Available",
+    "in_stock": "In Stock",
+    "out_of_stock": "Out of Stock",
+    "synopsis": "Synopsis",
+    "request": "Request",
+    "go_back": "Go Back"
+  },
+  "client": {
+    "dashboard": "Dashboard",
+    "details": "My Details",
+    "logout": "Logout",
+    "welcome": "Welcome"
+  },
+  "footer": {
+    "info": "Info",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Kathmandu, Nepal",
+    "links": "Links",
+    "home": "Home",
+    "books": "Books",
+    "about": "About Us",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "smallBanner": {
+    "quote": "Happiness is only real when shared",
+    "author": "― Jon Krakauer, Into the Wild"
+  },
+  "featuredBooks": {
+    "title": "Featured Books",
+    "loading": "Loading ..."
+  },
+  "bookList": {
+    "request": "Request",
+    "outOfStock": "Out of Stock",
+    "view": "View"
+  }
+}

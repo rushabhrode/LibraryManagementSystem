@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { backend_server } from '../../main'
 import axios from 'axios'
+import { useTranslation } from 'react-i18next'
+
 
 import './filterbooksform.css'
 
 const FilterBooksForm = ({ setBookData, setSearchResult, setFilterActive }) => {
+  const { t } = useTranslation()
   const API_URL_FILTER = `${backend_server}/api/v1/filter`
   const API_ALLBOOKS_URL = `${backend_server}/api/v1/books`
   const empty_field = {
@@ -140,7 +143,7 @@ const FilterBooksForm = ({ setBookData, setSearchResult, setFilterActive }) => {
                 type='text'
                 className='form-control mx-1'
                 autoComplete='off'
-                placeholder='Search by title . . .'
+                placeholder={t('filter.search_by_title')}
                 name='title'
                 value={filterFields.title}
                 onChange={handleSearchTitleOnChange}
@@ -155,7 +158,7 @@ const FilterBooksForm = ({ setBookData, setSearchResult, setFilterActive }) => {
                 onChange={handleCategoryChange}
               >
                 <option key='' value=''>
-                  Categories
+                  {t('filter.category')}
                 </option>
                 {categories.map((books_category) => {
                   return (
@@ -175,7 +178,7 @@ const FilterBooksForm = ({ setBookData, setSearchResult, setFilterActive }) => {
                 onChange={handleAuthorChange}
               >
                 <option key='' value=''>
-                  Author
+                  {t('filter.author')}
                 </option>
                 {author.map((books_author) => {
                   return (
@@ -195,7 +198,7 @@ const FilterBooksForm = ({ setBookData, setSearchResult, setFilterActive }) => {
                 onChange={handleLanguageChange}
               >
                 <option key='' value=''>
-                  Language
+                  {t('filter.language')}
                 </option>
                 {language.map((books_language) => {
                   return (
@@ -216,14 +219,14 @@ const FilterBooksForm = ({ setBookData, setSearchResult, setFilterActive }) => {
                 className='btn btn-success mx-1 my-1 '
                 onClick={handleFormSubmit}
               >
-                Search
+                {t('filter.search')}
               </button>
               <button
                 type='button'
                 className='btn btn-danger mx-1 my-1'
                 onClick={handleClearFilter}
               >
-                Clear Filter
+                {t('filter.clear')}
               </button>
             </div>
           </form>

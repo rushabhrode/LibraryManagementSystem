@@ -5,8 +5,12 @@ import './viewBooks.css'
 import useFetch from '../../useFetch'
 import RequestBook from '../requestBooks/RequestBook'
 import SimilarBooks from './SimilarBooks'
+import { useTranslation } from 'react-i18next'
+
 
 const ViewBook = () => {
+  const { t } = useTranslation()
+
   const { id } = useParams() //fetching book id from url params
   const API_URL = `${backend_server}/api/v1/books/${id}`
 
@@ -42,38 +46,38 @@ const ViewBook = () => {
 
         <div className='col mx-5 my-5 '>
           <h2>{bookData.title} </h2>
-          <p>by '{bookData.author}' </p>
-          <h5 className='h5'>Category : {bookData.category} </h5>
-          <h5>Language : {bookData.language} </h5>
+          <p>{t('view.by')} '{bookData.author}' </p>
+          <h5 className='h5'>{t('view.category')} : {bookData.category} </h5>
+          <h5>{t('view.language')} : {bookData.language} </h5>
           <h5>
-            Available :
+          {t('view.available')} :
             {bookData.available ? (
-              <span> In Stock</span>
+              <span> {t('view.in_stock')}</span>
             ) : (
-              <span> Out of Stock</span>
+              <span> {t('view.out_of_stock')}</span>
             )}{' '}
           </h5>
 
-          <h5 className='h5 my-1 mt-3 '>Sypnosis :</h5>
+          <h5 className='h5 my-1 mt-3 '>{t('view.synopsis')} :</h5>
           <h6 className='h6  my-2'> {bookData.description}</h6>
 
           {/* Request Books Button */}
           <div className='text-center'>
-            {bookData.available ? (
-              <button
-                type='button'
-                className='btn btn-primary me-2 mt-3'
-                onClick={() => request_Book(bookData._id)}
-              >
-                Request
-              </button>
+          {bookData.available ? (
+            <button
+              type='button'
+              className='btn btn-primary me-2 mt-3'
+              onClick={() => request_Book(bookData._id)}
+            >
+              {t('view.request')}
+            </button>
             ) : (
               <button
                 disabled
                 type='button'
                 className='btn btn-primary me-2 mt-3'
               >
-                Out of Stock
+                {t('view.out_of_stock')}
               </button>
             )}
 
@@ -82,7 +86,7 @@ const ViewBook = () => {
               className='btn btn-secondary me-2 mt-3'
               onClick={() => navigate(-1)}
             >
-              Go Back
+              {t('view.go_back')}
             </button>
           </div>
         </div>

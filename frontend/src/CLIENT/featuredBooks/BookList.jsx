@@ -3,8 +3,12 @@ import { backend_server } from '../../main'
 import { Link } from 'react-router-dom'
 import '../books/card.css'
 import RequestBook from '../requestBooks/RequestBook'
+import { useTranslation } from 'react-i18next'
+
 
 const BookList = (props) => {
+  const { t } = useTranslation()
+
   const { books } = props
 
   const { request_Book } = RequestBook()
@@ -41,7 +45,7 @@ const BookList = (props) => {
                       className='btn btn-primary me-2'
                       onClick={() => request_Book(_id)}
                     >
-                      Request
+                      {t('bookList.request')}
                     </button>
                   ) : (
                     <button
@@ -49,14 +53,14 @@ const BookList = (props) => {
                       className='btn btn-primary me-2'
                       disabled
                     >
-                      Out of Stock
+                      {t('bookList.outOfStock')}
                     </button>
                   )}
 
                   {/* View Books Button */}
                   <Link to={`/books/${_id}`}>
                     <button type='button' className='btn btn-secondary me-2'>
-                      View
+                      {t('bookList.view')}
                     </button>
                   </Link>
                 </div>

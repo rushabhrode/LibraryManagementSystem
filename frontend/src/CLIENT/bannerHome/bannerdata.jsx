@@ -4,15 +4,16 @@ const bannerData = [
   {
     id: 1,
     image: `/BannerOne.jpg`,
-    heading: `Discover new worlds`,
-    paragraph: `Dive into captivating stories. Immerse yourself in a world of imagination and wonders.`,
+    headingKey: 'banner1.heading',
+    paragraphKey: 'banner1.paragraph'
   },
   {
     id: 2,
     image: `/BannerTwo.jpg`,
-    heading: `Escape through pages`,
-    paragraph: `Explore the vast realms of human wisdom and understanding through the pages of books.`,
-  },
+    headingKey: 'banner2.heading',
+    paragraphKey: 'banner2.paragraph'
+  }
 ]
 
 export default bannerData
+

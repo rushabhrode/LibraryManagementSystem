@@ -3,8 +3,13 @@ import { backend_server } from '../../main'
 import { Link } from 'react-router-dom'
 import './card.css'
 import RequestBook from '../requestBooks/RequestBook'
+import { useTranslation } from 'react-i18next'
+
+
 
 const BrowseCollectionBooks = ({ bookData, searchResult }) => {
+  const { t } = useTranslation()
+
   const { request_Book } = RequestBook()
 
   return (
@@ -39,7 +44,7 @@ const BrowseCollectionBooks = ({ bookData, searchResult }) => {
                         className='btn btn-primary me-2'
                         onClick={() => request_Book(_id)}
                       >
-                        Request
+                        {t('browse.request')}
                       </button>
                     ) : (
                       <button
@@ -47,14 +52,14 @@ const BrowseCollectionBooks = ({ bookData, searchResult }) => {
                         className='btn btn-primary me-2'
                         disabled
                       >
-                        Out of Stock
+                        {t('browse.out_of_stock')}
                       </button>
                     )}
 
                     {/* View Books Button */}
                     <Link to={`/books/${_id}`}>
                       <button type='button' className='btn btn-secondary me-2'>
-                        View
+                      {t('browse.view')}
                       </button>
                     </Link>
                   </div>
@@ -65,7 +70,7 @@ const BrowseCollectionBooks = ({ bookData, searchResult }) => {
         })
       ) : (
         <h5 className='p text-center'>
-          {searchResult ? <p>Loading...</p> : <p>0 Results</p>}
+          {searchResult ? <p>{t('browse.loading')}</p> : <p>{t('browse.no_results')}</p>}
         </h5>
       )}
     </div>
