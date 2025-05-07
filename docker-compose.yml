@@ -1,34 +1,16 @@
-version: "3"
+version: '3.8'
+
 services:
-  # mongodb:
-  #   image: "mongo:6.0.6"
-  #   volumes:
-  #     - data:/data/db
-  backend:
-    build: ./backend
+  mongo:
+    image: mongo:6.0
+    container_name: mongo-container
     ports:
-      - "5000:5000"
-    env_file:
-      - ./backend/.env
+      - "27017:27017"
     volumes:
-      - logs:/app/logs
-      - ./backend:/app
-      - /app/node_modules
-    # depends_on:
-    #   - mongodb
-  frontend:
-    build: ./frontend
-    ports:
-      - "5173:5173"
-    volumes:
-      - ./frontend/src:/app/src
-    stdin_open: true
-    tty: true
-    depends_on:
-      - backend
+      - mongo-data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: librarymgmtsystem
+    restart: unless-stopped
 
 volumes:
-  data:
-  logs:
-# Note : as all the books data are populated in localhost mongodb ,we are using localhost mongodb instead of container's mongodb.
-# If container mongodb to be used then can uncomment
+  mongo-data:
